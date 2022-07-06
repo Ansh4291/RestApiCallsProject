@@ -8,7 +8,14 @@ public class HelloRestApi {
     public String Hello() {
         return "hello from bridgelabz";
     }
-    @RequestMapping(value = {"/query/{name}"}, method = RequestMethod.GET)
+    //UC2
+    @RequestMapping(value = {"/query"}, method = RequestMethod.GET)
+    public String sayHelloParam(@RequestParam(value = "name") String name)
+    {
+        return "Hello " + name + "!";
+    }
+    //UC3
+    @RequestMapping ("/query/{name}")
     public String sayHello(@PathVariable String name) {
         return "Hello " + name + "!";
     }
